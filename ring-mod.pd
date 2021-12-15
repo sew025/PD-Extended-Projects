@@ -1,0 +1,38 @@
+#N canvas 211 165 703 472 10;
+#X obj 84 201 osc~ 220;
+#X text 81 46;
+#X floatatom 83 159 5 0 0 0 - - -;
+#X obj 213 -10 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 10500 1;
+#X obj 213 139 / 127;
+#X floatatom 214 172 5 0 0 0 - - -;
+#X msg 215 209 \$1 20;
+#X obj 214 243 line~;
+#X obj 185 315 *~;
+#X text 282 200 $ = variable \; any # that comes into this message
+will replace "\$1" and be followed by " 20" (spaces separate items
+in a list) *RAMP takes as long as the second value in the list (in
+ms)*;
+#X obj 149 247 *~;
+#X obj 164 199 osc~;
+#X floatatom 165 167 5 0 0 0 - - -;
+#X obj 165 -11 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8600 1;
+#X text 233 42 These two oscilators create a ring modulator! When we
+listen we can hear both the sum and the difference of the two tones
+being played.;
+#X obj 179 364 adc~;
+#X text 218 358 dac~ = digital to analog converter (#s to sound) \,
+adc~ = analog to digital converter (sound to #s);
+#X connect 0 0 10 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 1;
+#X connect 8 0 15 0;
+#X connect 10 0 8 0;
+#X connect 11 0 10 1;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
